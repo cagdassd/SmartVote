@@ -1,0 +1,29 @@
+﻿@model VoteViewModel
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <title>Oy Verme Ekranı</title>
+</head>
+<body>
+    <h1>@Model.ElectionName</h1>
+    <p>Lütfen adaylardan birine oy verin:</p>
+
+    <form asp-action="CastVote" method="post">
+        <input type="hidden" asp-for="ElectionId" />
+
+        <div>
+            @foreach (var candidate in Model.Candidates)
+            {
+                <div>
+                    <input type="radio" asp-for="SelectedCandidateId" value="@candidate.CandidateID" />
+                    <label>@candidate.CandidateName - @candidate.Description</label>
+                </div>
+            }
+        </div>
+
+        <button type="submit">Oy Ver</button>
+    </form>
+</body>
+</html>

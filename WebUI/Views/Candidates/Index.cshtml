@@ -1,7 +1,52 @@
-﻿
+﻿@model List<Entities.Concrete.Candidate>;
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid;
+}
 
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+<form action ="/Candidates/AddCandidate" method="Post">
+    <label for="candidateName">Aday İsmi</label>
+    <input name="candidateName" />
+    <label for="candidateName">Aday Açıklaması</label>
+    <input name="candidateDescription"/>
+    <button class="btn btn-info mb-3">Aday Ekle</button>
+</form>
+<table>
+    <tr id="customers">
+        <th>ID</th>
+        <th>Aday İsmi</th>
+        <th>Aday Açıklaması</th>
+    </tr>
+    @foreach (var candidate in Model)
+    {
+        <tr>
+            <td>@candidate.CandidateID</td>
+            <td>@candidate.CandidateName</td>
+            <td>@candidate.Description</td>
+        </tr>        
+    }
+</table>

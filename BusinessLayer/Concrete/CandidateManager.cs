@@ -16,9 +16,14 @@ namespace BusinessLayer.Concrete
         {
             _candidateDal = candidateDal;
         }
-        public void Add(Candidate entity)
+        public async Task Add(Candidate entity)
         {
-            _candidateDal.Add(entity);
+            await _candidateDal.Add(entity);
+        }
+
+        public async Task<List<Candidate>> GetAll()
+        {
+            return await _candidateDal.GetAll();
         }
     }
 }

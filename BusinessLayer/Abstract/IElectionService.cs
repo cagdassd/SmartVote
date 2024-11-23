@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public interface ICandidateService
+    public interface IElectionService
     {
-        public Task Add(Candidate entity);
-        public Task<List<Candidate>> GetAll();
+        public Task<List<Election>> GetElections();
     }
 }
