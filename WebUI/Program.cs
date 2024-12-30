@@ -15,6 +15,8 @@ builder.Services.AddSingleton<ICandidateService, CandidateManager>();
 builder.Services.AddSingleton<ICandidateDal, EfCandidateDal>();
 builder.Services.AddSingleton<IElectionDal, EfElectionDal>();
 builder.Services.AddSingleton<IElectionService,ElectionManager>();
+builder.Services.AddSingleton<IUserService,UserManager>();
+builder.Services.AddSingleton<IUserDal,EfUserDal>();
 
 var app = builder.Build();
 

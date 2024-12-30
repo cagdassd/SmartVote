@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Abstract
 {
-    public class IVoteService
+    public interface IVoteService
     {
     }
 }

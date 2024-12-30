@@ -10,5 +10,6 @@ namespace BusinessLayer.Abstract
     public interface IElectionService
     {
         public Task<List<Election>> GetElections();
+        public Task Add(Election entity);
     }
 }

@@ -16,6 +16,12 @@ namespace BusinessLayer.Concrete
         {
             _electionDal = electionDal;
         }
+
+        public async Task Add(Election entity)
+        {
+            await _electionDal.Add(entity);
+        }
+
         public async Task<List<Election>> GetElections()
         {
             return await _electionDal.GetAll();
